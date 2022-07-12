@@ -4,25 +4,15 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Cadastro de Professores</title>
 </head>
 <body>
 	<form method="post" action="IncluirProfessor">
-	
-		<input type="text" name="nome"
-				required
-		       placeholder="Nome do professor"/>
-		       
-		<input type="text" name="celular"
-				required
-		       placeholder="contato professor"/>
-		
-		<input type="number" name="valorhora"
-		       step="0.01" required
-		       placeholder="Valor hora professor" />
-		
-		<input type="submit" value="Ok" />
-		<input type="reset" value="Limpar" />
+		<input type="text" name="nomeprofessor" placeholder="Nome completo" required>
+		<input type="text" name="celular" placeholder="Celular" required>
+		<input type="number" name="valorhora" placeholder="Valor hora" step="0.01" required>
+		<input type="submit" value="Ok">
+		<input type="reset" value="Limpar">
 	</form>
 </body>
 </html>

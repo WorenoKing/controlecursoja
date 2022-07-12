@@ -1,31 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page import="br.com.cursosja.controlecursoja.model.dao.ProfessorDao" %>
-<%@ page import="br.com.cursosja.controlecursoja.model.entidade.Professor" %>
-<%@ page import="java.util.List" %>    
-<%@ page import="java.text.DecimalFormat" %>
+<%@ page import="br.com.cursoja.controlecursoja.model.dao.ProfessorDao" %>
+<%@ page import="br.com.cursoja.controlecursoja.model.entidade.Professor" %>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Nossos Professores</title>
 </head>
 <body>
-	<h1>Lista de Professores</h1>
-	
-	<%
-		String nomeBusca = "";
-	
-		if (request.getParameter("nomeBusca") != null){
-			nomeBusca = request.getParameter("nomeBusca");
-		}
-	%>
-	<form method="post" action="lista_professor.jsp">
-		<input type="text" name="nomeBusca" value="<%= nomeBusca %>" />
-		
-		<input type="submit" value="Buscar" />
-	</form>
-	
+	<h1>Todos os Professores</h1>
 	<table>
 		<thead>
 			<tr>
@@ -35,33 +20,21 @@
 				<th>Ações</th>
 			</tr>
 		</thead>
-		
 		<tbody>
-			<%
+		<%
 			ProfessorDao dao = new ProfessorDao();
-			
-			List<Professor> professores = dao.listar(nomeBusca);
-
-			DecimalFormat fmt = new DecimalFormat("###,##0.00");
-			String strValor = "";
-			for (Professor c: professores) {
-				ValorHora = fmt.format( c.getValorHora() ); 
-			%>
+			List<Professor> professor = dao.listar("");
+			for (Professor p: professor){
+		%>
 			<tr>
-				<td><%= c.getNome() %></td>
-				<td><%= c.getCelular() %></td>
-				<td><%= ValorHora %></td>
+				<td><%= p.getNome() %></td>
+				<td><%= p.getCelular() %></td>
+				<td><%= p.getValorHora() %></td>
 				<td>
-					<a href="IniciarAlterarProfessor?id=<%= c.getId() %>">
-						Alterar
-					</a>
-					<a href="ExcluirProfessor?id=<%= c.getId() %>"
-						onclick="return confirm('Deseja excluir esse registro?'); ">
-						Excluir
-					</a>
+					<a href="IniciarAlterarProfessor?id=<%= p.getId()%>">Alterar</a> 
+					<a href="ExcluirProfessor?id=<%= p.getId()%>">Excluir</a>
 				</td>
 			</tr>
-		
 			<% } %>
 		</tbody>
 	</table>

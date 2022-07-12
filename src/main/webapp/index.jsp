@@ -7,20 +7,11 @@
 <title>Cursos Já</title>
 </head>
 <body>
-
-	<h1>Próximas turmas</h1>
-	<a href="login.jsp">Login</a>
-	
-	<a href="incluir_curso.jsp">Incluir Curso</a>
-	
-	<a href="lista_curso.jsp">Listar Curso</a>
-	
-	<br>
-	
-	<a href="incluir_professor.jsp">Incluir professor</a>
-	
-	<a href="lista_professor.jsp">Listar professor</a>
-	
-	
+	<h1>Próximas Turmas</h1>
+	<a href="incluir_curso.jsp">Cadastro de Curso</a>
+	<a href="lista_curso.jsp">Lista de Cursos</a>
+	<br><br>
+	<a href="incluir_professor.jsp">Cadastro de Professor</a>
+	<a href="lista_professor.jsp">Lista de professores</a>
 </body>
 </html>
