@@ -7,6 +7,7 @@
 <title>Cadastro de Professores</title>
 </head>
 <body>
+	<jsp:include page="verificaSessao.jsp"></jsp:include>
 	<form method="post" action="IncluirProfessor">
 		<input type="text" name="nomeprofessor" placeholder="Nome completo" required>
 		<input type="text" name="celular" placeholder="Celular" required>

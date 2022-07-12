@@ -10,6 +10,9 @@
 <title>Nossos Professores</title>
 </head>
 <body>
+	<jsp:include page="verificaSessao.jsp"></jsp:include>
+	<a href="area_interna.jsp">Voltar a página anterior</a>
+	<a href="incluir_professor.jsp">Cadastro de Professores</a>
 	<h1>Todos os Professores</h1>
 	<table>
 		<thead>
