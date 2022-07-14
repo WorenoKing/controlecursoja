@@ -15,6 +15,7 @@
 	<jsp:include page="verificaSessao.jsp"></jsp:include>
 	<form method="post" action="IncluirTurma">
 		<select name="curso" required>
+			<option value="">Selecione</option>
 		<% 
 			CursoDao dao = new CursoDao();
 			List<Curso> lista = dao.listar("");
